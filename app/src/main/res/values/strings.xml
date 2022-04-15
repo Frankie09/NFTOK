@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TRPAM</string>
     <string name="register">REGISTER</string>
-    <string name="login">LOG IN</string>
+    <string name="login">LOGIN</string>
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string name="confirm_password_hint">Confirm Password</string>
