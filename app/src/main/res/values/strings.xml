@@ -17,10 +17,13 @@
     <string name="error3">Password must be at least 8 characters!</string>
 
     <string name="buy">Buy</string>
+    <string name="deposit">Deposit</string>
     <string name="money">Money</string>
     <string name="collection">Collection</string>
     <string name="sell">Sell</string>
     <string name="about">About</string>
+    <string name="home">Home</string>
+    <string name="nominal">Enter Nominal</string>
 
     <string name="akun">Account</string>
     <string name="update">Update</string>
