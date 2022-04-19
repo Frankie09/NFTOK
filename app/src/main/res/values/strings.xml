@@ -24,11 +24,13 @@
     <string name="about">About</string>
     <string name="home">Home</string>
     <string name="nominal">Enter Nominal</string>
+    <string name="keterangan">Wellcome to NFTOK. This is an application that can be used for buying and selling NFT. In this application you can upload and sell your own NFT work, or you can buy other people work and the NFT becomes your property</string>
 
     <string name="akun">Account</string>
     <string name="update">Update</string>
     <string name="logout">Logout</string>
-
+    <string name="email">E-Mail</string>
+    <string name="alamat">Address</string>
     <string name="fullname">Full Name</string>
     <string name="username">Username</string>
     <string name="phone">Phone Number</string>
