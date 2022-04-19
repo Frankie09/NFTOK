@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        this.getSupportActionBar().hide();
         Username = findViewById(R.id.Username);
         Email = findViewById(R.id.Email);
         Password =  findViewById(R.id.Password);
@@ -46,23 +46,6 @@ public class MainActivity extends AppCompatActivity {
         // store app title to 'app_title' node
         mFirebaseInstance.getReference("app_title").setValue("User Database");
 
-        // app_title change listener
-        mFirebaseInstance.getReference("app_title").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.e("TAG", "App title updated");
-
-                String appTitle = dataSnapshot.getValue(String.class);
-                getSupportActionBar().setTitle(appTitle);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.e("TAG", "Failed to read app title value.", error.toException());
-            }
-        }
-        );
 
         Masuk.setOnClickListener(new View.OnClickListener() {
             @Override

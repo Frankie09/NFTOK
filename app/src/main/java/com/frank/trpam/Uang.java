@@ -14,26 +14,20 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Uang extends AppCompatActivity {
     DatabaseReference mFirebaseDatabase;
-    private EditText edittxtDeposit;
-    private TextView txtviewMoney;
-    private Button btnDeposit,btnHome;
+    private EditText isiuang;
+    private TextView jumlauang;
+    private Button tombolisi,btnHome;
     private String Username, Email, Password, Money, PhoneNumber;
     private  double amount;
-    private boolean klik = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uang);
-
-        try {
-            this.getSupportActionBar().hide();
-        }catch (NullPointerException e){}
-
+        this.getSupportActionBar().hide();
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("Profile");
-
-
         Intent intent = getIntent();
         Username = intent.getStringExtra("username");
         Email = intent.getStringExtra("email");
@@ -42,23 +36,23 @@ public class Uang extends AppCompatActivity {
         Money = intent.getStringExtra("money");
         double moneydouble = Double.parseDouble(Money);
 
-        edittxtDeposit = findViewById(R.id.edittxtDeposit);
-        txtviewMoney = findViewById(R.id.txtviewMoney);
-        btnDeposit = findViewById(R.id.btnDeposit);
+        isiuang = findViewById(R.id.isiuang);
+        jumlauang = findViewById(R.id.jumlahuang);
+        tombolisi = findViewById(R.id.tombolisi);
         btnHome = findViewById(R.id.btnHome);
 
-        txtviewMoney.setText("Rp. "+Money);
+        jumlauang.setText("Rp. "+Money);
 
-        btnDeposit.setOnClickListener(new View.OnClickListener() {
+        tombolisi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!edittxtDeposit.getText().toString().isEmpty()){
-                    double depositdouble = Double.parseDouble(edittxtDeposit.getText().toString());
+                if(!isiuang.getText().toString().isEmpty()){
+                    double depositdouble = Double.parseDouble(isiuang.getText().toString());
                     amount = moneydouble + depositdouble;
                     mFirebaseDatabase.child(Username).child("money").setValue(amount);
-                    txtviewMoney.setText("Rp. "+Double.toString(amount));
+                    jumlauang.setText("Rp. "+Double.toString(amount));
                 } else{
-                    edittxtDeposit.setError(getText(R.string.error4));
+                    isiuang.setError(getText(R.string.error4));
                 }
 
             }
@@ -67,13 +61,13 @@ public class Uang extends AppCompatActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                klik = true;
+
                 Intent intentback = new Intent(Uang.this, Home.class);
                 intentback.putExtra("email", Email);
                 intentback.putExtra("username", Username);
                 intentback.putExtra("phone", PhoneNumber);
                 intentback.putExtra("password", Password);
-                if(!edittxtDeposit.getText().toString().isEmpty()){
+                if(!isiuang.getText().toString().isEmpty()){
                     intentback.putExtra("money",Double.toString(amount));
                 } else{
                     intentback.putExtra("money",Money);

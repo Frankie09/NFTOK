@@ -28,11 +28,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        try {
-            this.getSupportActionBar().hide();
-        }catch (NullPointerException e){}
-
+        this.getSupportActionBar().hide();
         auth = FirebaseAuth.getInstance();
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("users");
