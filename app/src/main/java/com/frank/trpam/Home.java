@@ -2,6 +2,7 @@ package com.frank.trpam;
 
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,8 +14,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class Home extends AppCompatActivity {
 
@@ -31,7 +36,7 @@ public class Home extends AppCompatActivity {
         this.getSupportActionBar().hide();
         auth = FirebaseAuth.getInstance();
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
-        mFirebaseDatabase = mFirebaseInstance.getReference("users");
+        mFirebaseDatabase = mFirebaseInstance.getReference("Profile");
 
 
         btnLogout = findViewById(R.id.btnLogout);
@@ -39,10 +44,6 @@ public class Home extends AppCompatActivity {
         Intent intent = getIntent();
 
         username = intent.getStringExtra("username");
-        phone = intent.getStringExtra("phone");
-        email = intent.getStringExtra("email");
-        money = intent.getStringExtra("money");
-
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,66 +56,59 @@ public class Home extends AppCompatActivity {
         });
     }
 
+
+
     public void money(View view){
-        Intent intentdepo = new Intent(Home.this, Uang.class);
 
-        intentdepo.putExtra("email", email);
-        intentdepo.putExtra("username", username);
-        intentdepo.putExtra("phone", phone);
-        intentdepo.putExtra("money",money);
-
-        startActivity(intentdepo);
+        data();
     }
 
     public void buy(View view){
-        Intent intentshoplist = new Intent(Home.this, Market.class);
-
-        intentshoplist.putExtra("email", email);
-        intentshoplist.putExtra("username", username);
-        intentshoplist.putExtra("phone", phone);
-        intentshoplist.putExtra("money",money);
-
-        startActivity(intentshoplist);
+        data();
     }
     public void collection(View view){
-        Intent intentshoplist = new Intent(Home.this, Collection.class);
-
-        intentshoplist.putExtra("email", email);
-        intentshoplist.putExtra("username", username);
-        intentshoplist.putExtra("phone", phone);
-        intentshoplist.putExtra("money",money);
-
-        startActivity(intentshoplist);
+        data();
     }
     public void sell(View view){
-        Intent intentshoplist = new Intent(Home.this, Collection.class);
-
-        intentshoplist.putExtra("email", email);
-        intentshoplist.putExtra("username", username);
-        intentshoplist.putExtra("phone", phone);
-        intentshoplist.putExtra("money",money);
-
-        startActivity(intentshoplist);
+        data();
     }
     public void account(View view){
-        Intent intentshoplist = new Intent(Home.this, Account.class);
-
-        intentshoplist.putExtra("email", email);
-        intentshoplist.putExtra("username", username);
-        intentshoplist.putExtra("phone", phone);
-        intentshoplist.putExtra("money",money);
-
-        startActivity(intentshoplist);
+        data();
     }
     public void about(View view){
-        Intent intentshoplist = new Intent(Home.this, About.class);
-
-        intentshoplist.putExtra("email", email);
-        intentshoplist.putExtra("username", username);
-        intentshoplist.putExtra("phone", phone);
-        intentshoplist.putExtra("money",money);
-
-        startActivity(intentshoplist);
+        data();
     }
+
+public  void data(){
+
+    Query checkUser = mFirebaseDatabase.orderByChild("username").equalTo(username);
+    checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+            String emaildb = snapshot.child(username).child("email").getValue(String.class);
+            String phonedb = snapshot.child(username).child("phone").getValue(String.class);
+            String passworddb = snapshot.child(username).child("password").getValue(String.class);
+            String usernamedb = snapshot.child(username).child ("username").getValue(String.class);
+            double moneydb = snapshot.child(username).child("money").getValue(double.class);
+            String money2 = Double.toString(moneydb);
+            Intent intent2 = new Intent(getApplicationContext(), Uang.class);
+            intent2.putExtra("username",usernamedb);
+            intent2.putExtra("email",emaildb);
+            intent2.putExtra("phone",phonedb);
+            intent2.putExtra("money",money2);
+            intent2.putExtra("password",passworddb);
+
+            startActivity(intent2);
+
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+    });
+}
 
 }
