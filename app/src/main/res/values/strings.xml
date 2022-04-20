@@ -35,6 +35,20 @@
     <string name="username">Username</string>
     <string name="phone">Phone Number</string>
 
-
+    <string-array name="berita">
+        <item>Biden administration extends immigration relief to Ukrainians in the US</item>
+        <item>President of Georgia on Ukraine crisis: It looks like Putin is destroying the "whole country"</item>
+        <item>US military establishes communications line with Russia to avoid any incidents near Ukraine</item>
+    </string-array>
+    <string-array name="isi">
+        <item> The relief – known as Temporary Protected Status, or TPS – applies to people who would face extreme hardship if they were forced to return to homelands devastated by armed conflict or natural disasters. </item>
+        <item> He was not planning on the way Ukraine is resisting. He had a mass assault that was very psychological with his forces that were used from all sides. And it has not worked.</item>
+        <item> The US and Russia have established communications channel where the two sides can notify each other of any potential operations that may be in close proximity to avoid any possible miscalculations near Ukraine.</item>
+    </string-array>
+    <string-array name="gambar">
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+    </string-array>
 
 </resources>
