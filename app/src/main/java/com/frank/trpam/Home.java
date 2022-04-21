@@ -27,7 +27,7 @@ public class Home extends AppCompatActivity {
     private String username,money,phone,email;
     private Button  btnLogout;
     private FirebaseAuth auth;
-    DatabaseReference mFirebaseDatabase;
+    DatabaseReference mFirebaseDatabase,item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class Home extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("Profile");
+        item = mFirebaseInstance.getReference("Item");
 
 
         btnLogout = findViewById(R.id.btnLogout);
@@ -63,10 +64,22 @@ public class Home extends AppCompatActivity {
     }
 
     public void buy(View view){
+
+        Ipsum.listData.clear();
+        if(Ipsum.listData.isEmpty()){
+            data2();
+        }
+
         beli();
     }
     public void collection(View view){
+        Ipsum.listData.clear();
+        if(Ipsum.listData.isEmpty()){
+            data3();
+        }
+
         koleksi();
+
     }
     public void sell(View view){
         jual();
@@ -99,6 +112,7 @@ public  void data(){
             intent2.putExtra("money",money2);
             intent2.putExtra("password",passworddb);
 
+
             startActivity(intent2);
 
         }
@@ -110,6 +124,83 @@ public  void data(){
     });
 }
 
+    public void data2(){
+
+        item.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+
+                for(DataSnapshot snapshot : datasnapshot.getChildren()){
+                    String nama = snapshot.child("penjual").getValue().toString();
+                    String deskripsi = snapshot.child("deskripsi").getValue().toString();
+                    String foto = snapshot.child("foto").getValue().toString();
+                    String harga = snapshot.child("harga").getValue().toString();
+                    String judul = snapshot.child("judul").getValue().toString();
+
+
+
+                    Shoplist shoplist =  new Shoplist(judul,deskripsi,foto,nama,Double.parseDouble(harga));
+                    Ipsum.listData.add(shoplist);
+                    System.out.println(nama);
+                    // mFirebaseDatabase.child(getResources().getStringArray(R.array.gambar)[i]).setValue(shoplist);
+
+
+
+
+
+
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void data3(){
+        Query checkUser = item.orderByChild("penjual").equalTo(username);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+
+                for(DataSnapshot snapshot : datasnapshot.getChildren()){
+                    String nama = snapshot.child("penjual").getValue().toString();
+                    String deskripsi = snapshot.child("deskripsi").getValue().toString();
+                    String foto = snapshot.child("foto").getValue().toString();
+                    String harga = snapshot.child("harga").getValue().toString();
+                    String judul = snapshot.child("judul").getValue().toString();
+
+
+
+                    Shoplist shoplist =  new Shoplist(judul,deskripsi,foto,nama,Double.parseDouble(harga));
+                    Ipsum.listData.add(shoplist);
+
+                    // mFirebaseDatabase.child(getResources().getStringArray(R.array.gambar)[i]).setValue(shoplist);
+
+
+
+
+
+
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
     public  void beli(){
 
         Query checkUser = mFirebaseDatabase.orderByChild("username").equalTo(username);
@@ -130,6 +221,7 @@ public  void data(){
                 intent2.putExtra("phone",phonedb);
                 intent2.putExtra("money",money2);
                 intent2.putExtra("password",passworddb);
+                intent2.putExtra("status","beli");
 
                 startActivity(intent2);
 
@@ -186,12 +278,13 @@ public  void data(){
                 String usernamedb = snapshot.child(username).child ("username").getValue(String.class);
                 double moneydb = snapshot.child(username).child("money").getValue(double.class);
                 String money2 = Double.toString(moneydb);
-                Intent intent2 = new Intent(getApplicationContext(), Collection.class);
+                Intent intent2 = new Intent(getApplicationContext(), Market.class);
                 intent2.putExtra("username",usernamedb);
                 intent2.putExtra("email",emaildb);
                 intent2.putExtra("phone",phonedb);
                 intent2.putExtra("money",money2);
                 intent2.putExtra("password",passworddb);
+                intent2.putExtra("status","koleksi");
 
                 startActivity(intent2);
 
