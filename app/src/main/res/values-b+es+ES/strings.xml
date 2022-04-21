@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">TRPAM</string>
+    <string name="register">REGISTRARSE</string>
+    <string name="login">INICIAR SESIÓN</string>
+    <string name="login_email_hint">Correo electrónico</string>
+    <string name="login_password_hint">Contraseña</string>
+    <string name="confirm_password_hint">confirmar Contraseña</string>
+    <string name="signup_login_hint">¿Ya tienes una cuenta? iniciar sesión</string>
+    <string name="login_signup_hint">"¿No tienes una cuenta? Registro"</string>
+    <string name="error1">¡Contraseña incorrecta!</string>
+    <string name="error7">¡No existe tal usuario!</string>
+    <string name="error4">¡No se permiten campos vacíos!</string>
+    <string name="error5">¡Ingrese el correo electrónico correcto!</string>
+    <string name="error6">¡Regístrese con éxito!</string>
+
+    <string name="error2">"¡La confirmación de la contraseña no coincide con la contraseña!"</string>
+    <string name="error3">¡La contraseña debe tener al menos 8 caracteres!</string>
+
+    <string name="buy">Comprar</string>
+    <string name="deposit">Depósito</string>
+    <string name="money">Dinero</string>
+    <string name="collection">Recopilación</string>
+    <string name="sell">Vender</string>
+    <string name="about">Acerca de</string>
+    <string name="home">Inicio</string>
+    <string name="nominal">Ingrese nominal</string>
+    <string name="keterangan">Bienvenido a NFTOK. Esta es una aplicación que se puede utilizar para comprar y vender NFT. En esta aplicación, puede cargar y vender su propio trabajo NFT, o puede comprar el trabajo de otras personas y el NFT se convierte en su propiedad.</string>
+
+    <string name="akun">Cuenta</string>
+    <string name="update">Actualizar</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="email">Correo electrónico</string>
+    <string name="alamat">Dirección</string>
+    <string name="fullname">Nombre completo</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="phone">Número de teléfono</string>
+
+    <string-array name="berita">
+        <item>Example 1</item>
+        <item>Example 2</item>
+        <item>Example 3</item>
+    </string-array>
+    <string-array name="isi">
+        <item> Example Description 1 </item>
+        <item> Example Description 2</item>
+        <item> Example Description 3</item>
+    </string-array>
+    <string-array name="gambar">
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+    </string-array>
+
+    <string-array name="penjual">
+        <item>Nodas</item>
+        <item>Frankie</item>
+        <item>Ajeng</item>
+    </string-array>
+
+    <string-array name="harga">
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+    </string-array>
+
+</resources>
