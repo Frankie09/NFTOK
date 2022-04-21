@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">TRPAM</string>
+    <string name="register">DAFTAR</string>
+    <string name="login">MASUK</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Kata Sandi</string>
+    <string name="confirm_password_hint">Konfirmasi Kata Sandi</string>
+    <string name="signup_login_hint">Sudah memiliki akun? Masuk</string>
+    <string name="login_signup_hint">"Tidak memiliki akun? Mendaftar"</string>
+    <string name="error1">Kata Sandi Salah!</string>
+    <string name="error7">Pengguna tidak terdaftar!</string>
+    <string name="error4">Bidang ini tidak boleh kosong!</string>
+    <string name="error5">Silakan Masukkan Email yang Benar!</string>
+    <string name="error6">Berhasil Mendaftar!</string>
+
+    <string name="error2">"Konfirmasi kata sandi tidak cocok dengan kata sandi!"</string>
+    <string name="error3">Kata sandi harus terdiri dari 8 karakter!</string>
+
+    <string name="buy">Beli</string>
+    <string name="deposit">Menyetorkan Uang</string>
+    <string name="money">Uang</string>
+    <string name="collection">Koleksi</string>
+    <string name="sell">Jual</string>
+    <string name="about">Tentang</string>
+    <string name="home">Awal</string>
+    <string name="nominal">Masukkan Nominal</string>
+    <string name="keterangan">Selamat datang di NFTOK. Ini adalah aplikasi yang dapat digunakan untuk jual beli NFT. Dalam aplikasi ini Anda dapat mengunggah dan menjual karya NFT Anda sendiri, atau Anda dapat membeli karya orang lain dan NFT tersebut menjadi milik Anda</string>
+
+    <string name="akun">Akun</string>
+    <string name="update">Memperbarui</string>
+    <string name="logout">Keluar</string>
+    <string name="email">E-Mail</string>
+    <string name="alamat">Alamat</string>
+    <string name="fullname">Nama Lengkap</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="phone">Nomor Telepon</string>
+
+    <string-array name="berita">
+        <item>Example 1</item>
+        <item>Example 2</item>
+        <item>Example 3</item>
+    </string-array>
+    <string-array name="isi">
+        <item> Example Description 1 </item>
+        <item> Example Description 2</item>
+        <item> Example Description 3</item>
+    </string-array>
+    <string-array name="gambar">
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+    </string-array>
+
+    <string-array name="penjual">
+        <item>Nodas</item>
+        <item>Frankie</item>
+        <item>Ajeng</item>
+    </string-array>
+
+    <string-array name="harga">
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+    </string-array>
+
+</resources>
