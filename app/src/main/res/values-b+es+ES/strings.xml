@@ -17,6 +17,7 @@
     <string name="error3">¡La contraseña debe tener al menos 8 caracteres!</string>
 
     <string name="buy">Comprar</string>
+    <string name="buysucces">Buy Succes!</string>
     <string name="deposit">Depósito</string>
     <string name="money">Dinero</string>
     <string name="collection">Recopilación</string>
