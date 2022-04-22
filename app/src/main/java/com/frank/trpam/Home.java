@@ -141,7 +141,7 @@ public  void data(){
 
                     Shoplist shoplist =  new Shoplist(judul,deskripsi,foto,nama,Double.parseDouble(harga));
                     Ipsum.listData.add(shoplist);
-                    System.out.println(nama);
+
                     // mFirebaseDatabase.child(getResources().getStringArray(R.array.gambar)[i]).setValue(shoplist);
 
 

@@ -18,6 +18,7 @@
 
     <string name="buy">Beli</string>
     <string name="buysucces">Buy Succes!</string>
+    <string name="buyfail">Not enugh money!</string>
     <string name="deposit">Menyetorkan Uang</string>
     <string name="money">Uang</string>
     <string name="collection">Koleksi</string>

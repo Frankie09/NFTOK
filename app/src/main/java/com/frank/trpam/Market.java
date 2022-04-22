@@ -20,15 +20,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;
 
 public class Market extends AppCompatActivity implements ListFrag.JudulListener {
     TextView article,judul_berita,penjual2,harga2;
     ImageView image;
-    private String Username,status;
+    private String Username,status,money;
     Button playButton;
-    DatabaseReference mFirebaseDatabase;
+    DatabaseReference mFirebaseDatabase,userdb;
 
 
     private final int REQUEST = 1;
@@ -43,6 +44,7 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
         harga2 = (TextView) findViewById(R.id.hargaisi);
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("Item");
+        userdb = mFirebaseInstance.getReference("Profile");
 
 
 
@@ -68,6 +70,8 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
         Intent intent = getIntent();
         Username = intent.getStringExtra("username");
         status = intent.getStringExtra("status");
+        money = intent.getStringExtra("money");
+
         String status2 =  "koleksi";
         playButton = (Button) findViewById(R.id.tombolbeli);
 
@@ -94,16 +98,34 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
         penjual2.setText("Penjual : \n"+Ipsum.listData.get(index).getPenjual());
         harga2.setText("Harga \n Rp."+Ipsum.listData.get(index).getHarga());
 
-        image.setImageResource(getImageId(this,Ipsum.listData.get(index).getFoto()));
+       // image.setImageResource(getImageId(this,Ipsum.listData.get(index).getFoto()));
+        Picasso.with(this).load(getImageId(this,Ipsum.listData.get(index).getFoto())).into(image);
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mFirebaseDatabase.child(Ipsum.listData.get(index).getFoto()).child("penjual").setValue(Username);
-                Toast.makeText(Market.this, R.string.buysucces, Toast.LENGTH_SHORT).show();
-                Intent intent2 = new Intent(getApplicationContext(), Home.class);
-                intent2.putExtra("username",Username);
-                startActivity(intent2);
+                double b = Ipsum.listData.get(index).getHarga();
+                double a = Double.parseDouble(money);
+                if (a<b) {
+                    Toast.makeText(Market.this, R.string.buyfail, Toast.LENGTH_SHORT).show();
+
+
+                }else {
+                    double c = a - b;
+                    userdb.child(Username).child("money").setValue(c);
+
+                    mFirebaseDatabase.child(Ipsum.listData.get(index).getFoto()).child("penjual").setValue(Username);
+                    Toast.makeText(Market.this, R.string.buysucces, Toast.LENGTH_SHORT).show();
+                    Intent intent2 = new Intent(getApplicationContext(), Home.class);
+                    intent2.putExtra("username",Username);
+                    startActivity(intent2);
+
+                }
+
+
+
+
+
             }
         });
 

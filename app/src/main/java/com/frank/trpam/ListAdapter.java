@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class ListAdapter extends ArrayAdapter<Shoplist> {
@@ -53,7 +55,9 @@ public class ListAdapter extends ArrayAdapter<Shoplist> {
 
             tvArticle.setText("Rp."+deskrip);
 
-        gambar2.setImageResource(getImageId(mContext,gambar));
+        //gambar2.setImageResource(getImageId(mContext,gambar));
+
+        Picasso.with(mContext).load(getImageId(mContext,gambar)).into(gambar2);
 
 
 

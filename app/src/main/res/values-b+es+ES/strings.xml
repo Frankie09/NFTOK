@@ -18,6 +18,7 @@
 
     <string name="buy">Comprar</string>
     <string name="buysucces">Buy Succes!</string>
+    <string name="buyfail">Not enugh money!</string>
     <string name="deposit">Depósito</string>
     <string name="money">Dinero</string>
     <string name="collection">Recopilación</string>
