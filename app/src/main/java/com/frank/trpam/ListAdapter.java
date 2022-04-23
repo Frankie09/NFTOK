@@ -57,7 +57,7 @@ public class ListAdapter extends ArrayAdapter<Shoplist> {
 
         //gambar2.setImageResource(getImageId(mContext,gambar));
 
-        Picasso.with(mContext).load(getImageId(mContext,gambar)).into(gambar2);
+        Picasso.with(mContext).load(gambar).into(gambar2);
 
 
 

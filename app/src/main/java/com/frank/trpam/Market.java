@@ -22,14 +22,16 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 
 public class Market extends AppCompatActivity implements ListFrag.JudulListener {
-    TextView article,judul_berita,penjual2,harga2;
+    TextView article,judul_berita,penjual2,harga2,dibelidari,pemilik;
     ImageView image;
     private String Username,status,money;
     Button playButton;
-    DatabaseReference mFirebaseDatabase,userdb;
+    DatabaseReference mFirebaseDatabase,userdb,log;
 
 
     private final int REQUEST = 1;
@@ -42,9 +44,12 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
         judul_berita = (TextView) findViewById(R.id.article);
         penjual2 = (TextView) findViewById(R.id.penjual);
         harga2 = (TextView) findViewById(R.id.hargaisi);
+        pemilik = (TextView) findViewById(R.id.pemilik);
+        dibelidari = (TextView) findViewById(R.id.dibelidari);
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("Item");
         userdb = mFirebaseInstance.getReference("Profile");
+        log = mFirebaseInstance.getReference("Log");
 
 
 
@@ -97,9 +102,11 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
         judul_berita.setText(Ipsum.listData.get(index).getJudul());
         penjual2.setText("Penjual : \n"+Ipsum.listData.get(index).getPenjual());
         harga2.setText("Harga \n Rp."+Ipsum.listData.get(index).getHarga());
+        dibelidari.setText("Dibeli dari \n"+ Ipsum.listData.get(index).getDari());
+        pemilik.setText("Pemilik \n"+Ipsum.listData.get(index).getPemilik());
 
        // image.setImageResource(getImageId(this,Ipsum.listData.get(index).getFoto()));
-        Picasso.with(this).load(getImageId(this,Ipsum.listData.get(index).getFoto())).into(image);
+        Picasso.with(this).load(Ipsum.listData.get(index).getFoto()).into(image);
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,14 +118,28 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
 
 
                 }else {
-                    double c = a - b;
-                    userdb.child(Username).child("money").setValue(c);
 
-                    mFirebaseDatabase.child(Ipsum.listData.get(index).getFoto()).child("penjual").setValue(Username);
-                    Toast.makeText(Market.this, R.string.buysucces, Toast.LENGTH_SHORT).show();
-                    Intent intent2 = new Intent(getApplicationContext(), Home.class);
-                    intent2.putExtra("username",Username);
-                    startActivity(intent2);
+                    if (Username.equals(Ipsum.listData.get(index).getPenjual())){
+                        Toast.makeText(Market.this, "Cannot buy your own Image", Toast.LENGTH_SHORT).show();
+                    } else {
+                        double c = a - b;
+                        userdb.child(Username).child("money").setValue(c);
+                        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+                        log.child("Log").child(timeStamp).setValue("Transaksi :"+Ipsum.listData.get(index).getPenjual()+" ke "+Username);
+
+                        mFirebaseDatabase.child(Ipsum.listData.get(index).getNamafile()).child("dari").setValue(Ipsum.listData.get(index).getPenjual());
+                        mFirebaseDatabase.child(Ipsum.listData.get(index).getNamafile()).child("penjual").setValue(Username);
+
+
+
+
+                        Toast.makeText(Market.this, R.string.buysucces, Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(getApplicationContext(), Home.class);
+                        intent2.putExtra("username",Username);
+                        startActivity(intent2);
+
+
+                    }
 
                 }
 

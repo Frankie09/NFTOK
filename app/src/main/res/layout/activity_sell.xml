@@ -1,15 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".Sell">
+
+
+    <EditText
+        android:id="@+id/edit_text_file_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="Enter file name" />
 
     <ImageView
         android:id="@+id/uploadgambar"
-        android:layout_width="250dp"
+        android:layout_width="400dp"
         android:layout_height="250dp"
-        android:layout_weight="1"
+        android:layout_below="@id/deskripsinft"
+
         android:src="@drawable/a1" />
-</LinearLayout>
+
+    <EditText
+        android:id="@+id/judulnft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_file_name"
+        android:layout_marginStart="16dp"
+        android:hint="Tittle" />
+
+    <EditText
+        android:id="@+id/deskripsinft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/harganft"
+        android:layout_marginStart="16dp"
+        android:hint="Description" />
+
+    <EditText
+        android:id="@+id/harganft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/judulnft"
+        android:layout_marginStart="16dp"
+        android:hint="Price" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_upload"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/button_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Sell" />
+
+
+
+</RelativeLayout>

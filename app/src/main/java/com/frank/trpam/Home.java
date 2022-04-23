@@ -136,10 +136,13 @@ public  void data(){
                     String foto = snapshot.child("foto").getValue().toString();
                     String harga = snapshot.child("harga").getValue().toString();
                     String judul = snapshot.child("judul").getValue().toString();
+                    String dari = snapshot.child("dari").getValue().toString();
+                    String namafile = snapshot.child("namafile").getValue().toString();
+                    String pemilik = snapshot.child("pemilik").getValue().toString();
 
 
 
-                    Shoplist shoplist =  new Shoplist(judul,deskripsi,foto,nama,Double.parseDouble(harga));
+                    Shoplist shoplist =  new Shoplist(judul,deskripsi,foto,nama,Double.parseDouble(harga),dari,namafile,pemilik);
                     Ipsum.listData.add(shoplist);
 
                     // mFirebaseDatabase.child(getResources().getStringArray(R.array.gambar)[i]).setValue(shoplist);
@@ -175,10 +178,13 @@ public  void data(){
                     String foto = snapshot.child("foto").getValue().toString();
                     String harga = snapshot.child("harga").getValue().toString();
                     String judul = snapshot.child("judul").getValue().toString();
+                    String dari = snapshot.child("dari").getValue().toString();
+                    String namafile = snapshot.child("namafile").getValue().toString();
+                    String pemilik = snapshot.child("pemilik").getValue().toString();
 
 
 
-                    Shoplist shoplist =  new Shoplist(judul,deskripsi,foto,nama,Double.parseDouble(harga));
+                    Shoplist shoplist =  new Shoplist(judul,deskripsi,foto,nama,Double.parseDouble(harga),dari,namafile,pemilik);
                     Ipsum.listData.add(shoplist);
 
                     // mFirebaseDatabase.child(getResources().getStringArray(R.array.gambar)[i]).setValue(shoplist);
