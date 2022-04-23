@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,7 +23,7 @@ public class Account extends AppCompatActivity {
     DatabaseReference mFirebaseDatabase;
     private Button btnChange;
     private String Username, Email, Password, Money, PhoneNumber;
-    private EditText nomor,email;
+    private EditText nomor,email,password;
     private TextView user;
 
     @Override
@@ -43,9 +44,11 @@ public class Account extends AppCompatActivity {
         user = findViewById(R.id.username1);
         nomor = findViewById(R.id.editnomor);
         email = findViewById(R.id.editemail);
+        password = findViewById(R.id.editpassword);
         user.setText("Username : "+ Username);
         nomor.setText(PhoneNumber);
         email.setText(Email);
+        password.setText(Password);
 
         btnChange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +57,8 @@ public class Account extends AppCompatActivity {
 
                     mFirebaseDatabase.child(Username).child("phone").setValue(nomor.getText().toString());
                     mFirebaseDatabase.child(Username).child("email").setValue(email.getText().toString());
+                    mFirebaseDatabase.child(Username).child("password").setValue(password.getText().toString());
+                    Toast.makeText(Account.this, "Succes Change", Toast.LENGTH_SHORT).show();
                 }  else if(email.getText().toString().isEmpty()){
                     email.setError(getText(R.string.error4));
                 }   else if(nomor.getText().toString().isEmpty()){

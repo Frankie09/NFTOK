@@ -57,6 +57,19 @@
 
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/sama"
+            android:layout_marginTop="@dimen/signup_text_margin_top">
+
+            <EditText
+                android:id="@+id/editpassword"
+                style="@style/input"
+                android:hint="@string/login_password_hint"
+                android:inputType="text"
+                android:maxLines="1" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnChange"
