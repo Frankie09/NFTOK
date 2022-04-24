@@ -8,6 +8,10 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="sama2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
 
     <style name="daftar" parent="sama">
         <item name="android:layout_height">match_parent</item>
@@ -23,7 +27,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="login" parent="sama"></style>
+    <style name="login" parent="sama2"></style>
 
     <style name="form" parent="sama">
         <item name="android:orientation">vertical</item>
