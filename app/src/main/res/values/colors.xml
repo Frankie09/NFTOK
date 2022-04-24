@@ -9,7 +9,7 @@
         <color name="primaryTextColor">#00a5ff</color>
         <color name="loginBkColor">#f0f0f0</color>
 
-        <!--colros for card-->
+        <!--colors for card-->
         <color name="whiteCardColor">#fff</color>
 
         <color name="purple_200">#FFBB86FC</color>
@@ -19,6 +19,14 @@
         <color name="teal_700">#FF018786</color>
         <color name="black">#FF000000</color>
         <color name="white">#FFFFFFFF</color>
+
+        <!--colors for home's rectangle-->
+        <color name="rect1">#AEDDCD</color>
+        <color name="rect2">#B9E6D1</color>
+        <color name="rect3">#A8E6CF</color>
+        <color name="rect4">#A7D7C5</color>
+        <color name="rect5">#BEE5D3</color>
+        <color name="rect6">#9FDFCD</color>
 
         <color name="color_primary">#303f9f</color>
         <color name="color_primary_dark">#1a237e</color>
