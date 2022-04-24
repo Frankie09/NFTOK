@@ -2,14 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     style="@style/daftar"
-    >
-    <ScrollView
-        style="@style/sama">
+    android:background="@drawable/bg"
+    android:orientation="vertical">
 
-        <RelativeLayout
-            style="@style/sama">
+    <ScrollView style="@style/sama">
+
+        <RelativeLayout style="@style/sama">
 
 
             <LinearLayout
@@ -20,15 +19,15 @@
 
                 <LinearLayout
                     style="@style/sama"
+                    android:layout_weight="3"
                     android:background="@drawable/login_shape_bk"
-                    android:orientation="vertical"
-                    android:layout_weight="3">
-
+                    android:orientation="vertical">
 
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -37,10 +36,9 @@
 
                 <LinearLayout
                     style="@style/sama"
+                    android:layout_weight="3"
                     android:background="@drawable/login_shape_bt"
-                    android:orientation="vertical"
-                    android:layout_weight="3">
-
+                    android:orientation="vertical">
 
 
                 </LinearLayout>
@@ -51,26 +49,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
-                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp">
+                android:orientation="vertical">
 
 
                 <TextView
                     style="@style/nama"
                     android:layout_gravity="center"
-                    android:text="NFT MARKETPLACE"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_marginTop="40dp"
+                    android:text="NFT MARKETPLACE" />
 
                 <androidx.cardview.widget.CardView
                     style="@style/login"
-                    app:cardCornerRadius="@dimen/loginCardRadius"
-                    android:elevation="5dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/loginViewsMargin"
                     android:layout_marginBottom="@dimen/loginViewsMargin"
-                    android:background="@color/whiteCardColor">
+                    android:background="@color/whiteCardColor"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="@dimen/loginCardRadius">
 
                     <LinearLayout
                         style="@style/form"
@@ -79,65 +77,68 @@
 
                         <TextView
                             style="@style/texthijau"
-                            android:text="@string/register"
-                            android:layout_marginTop="@dimen/loginViewsMargin"/>
-
-
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:text="@string/register" />
 
 
                         <com.google.android.material.textfield.TextInputLayout
                             style="@style/sama"
                             android:layout_marginTop="@dimen/signup_text_margin_top">
+
                             <EditText
                                 android:id="@+id/Username"
                                 style="@style/input"
+                                android:hint="@string/username"
                                 android:inputType="text"
-                                android:maxLines="1"
-                                android:hint="@string/username"/>
+                                android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             style="@style/sama"
                             android:layout_marginTop="@dimen/signup_text_margin_top">
+
                             <EditText
                                 android:id="@+id/PhoneNumber"
                                 style="@style/input"
+                                android:hint="@string/phone"
                                 android:inputType="number"
-                                android:maxLines="1"
-                                android:hint="@string/phone"/>
+                                android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             style="@style/sama"
                             android:layout_marginTop="@dimen/signup_text_margin_top">
+
                             <EditText
                                 android:id="@+id/Email"
                                 style="@style/input"
+                                android:hint="@string/login_email_hint"
                                 android:inputType="textEmailAddress"
-                                android:maxLines="1"
-                                android:hint="@string/login_email_hint"/>
+                                android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             style="@style/sama"
                             android:layout_marginTop="@dimen/signup_text_margin_top">
+
                             <EditText
                                 android:id="@+id/Password"
                                 style="@style/input"
                                 android:hint="@string/login_password_hint"
-                                android:maxLines="1"
-                                android:inputType="textPassword"/>
+                                android:inputType="textPassword"
+                                android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             style="@style/sama"
                             android:layout_marginTop="@dimen/signup_text_margin_top">
+
                             <EditText
                                 android:id="@+id/Repassword"
                                 style="@style/input"
                                 android:hint="@string/confirm_password_hint"
-                                android:maxLines="1"
-                                android:inputType="textPassword"/>
+                                android:inputType="textPassword"
+                                android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <Button
@@ -147,17 +148,18 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="16dp"
                             android:text="@string/register"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            app:cornerRadius="70dp" />
 
                         <TextView
                             android:id="@+id/Masuk"
                             style="@style/sama"
-                            android:textAlignment="center"
-                            android:textStyle="bold"
-                            android:textColor="@color/teal_200"
-                            android:text="@string/signup_login_hint"
                             android:layout_marginTop="@dimen/loginViewsMargin"
-                            android:gravity="center_horizontal" />
+                            android:gravity="center_horizontal"
+                            android:text="@string/signup_login_hint"
+                            android:textAlignment="center"
+                            android:textColor="@color/primaryTextColor"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
