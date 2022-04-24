@@ -2,14 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     style="@style/login"
-    >
-    <ScrollView
-        style="@style/sama">
+    android:background="@drawable/bg"
+    android:orientation="vertical">
 
-        <RelativeLayout
-            style="@style/sama">
+    <ScrollView style="@style/sama">
+
+        <RelativeLayout style="@style/sama">
 
 
             <LinearLayout
@@ -20,15 +19,14 @@
 
                 <LinearLayout
                     style="@style/sama"
+                    android:layout_weight="3"
                     android:background="@drawable/login_shape_bk"
-                    android:orientation="vertical"
-                    android:layout_weight="3">
+                    android:orientation="vertical">
 
                     <ImageView
                         style="@style/sama"
                         android:background="@drawable/login_shape_bk"
                         android:contentDescription="login background" />
-
 
 
                 </LinearLayout>
@@ -39,27 +37,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
-                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp">
+                android:orientation="vertical">
 
 
                 <TextView
                     style="@style/nama"
                     android:layout_gravity="center"
-                    android:text="NFT MARKETPLACE"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="20dp"
+                    android:text="NFT MARKETPLACE" />
 
                 <androidx.cardview.widget.CardView
                     style="@style/login"
-                    app:cardCornerRadius="@dimen/loginCardRadius"
-                    android:elevation="5dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/loginViewsMargin"
                     android:layout_marginBottom="@dimen/loginViewsMargin"
-                    android:background="@color/whiteCardColor">
-
+                    android:background="@color/whiteCardColor"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="@dimen/loginCardRadius">
 
 
                     <LinearLayout
@@ -78,51 +75,54 @@
                             android:id="@+id/textInputEmail"
                             style="@style/sama"
                             android:layout_marginTop="@dimen/loginViewsMargin">
+
                             <EditText
                                 android:id="@+id/editTextUsername"
                                 style="@style/input"
+                                android:hint="@string/username"
                                 android:inputType="text"
-                                android:maxLines="1"
-                                android:hint="@string/username"/>
+                                android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputPassword"
                             style="@style/sama"
                             android:layout_marginTop="@dimen/loginViewsMargin">
+
                             <EditText
                                 android:id="@+id/editTextPassword"
                                 style="@style/input"
                                 android:hint="@string/login_password_hint"
-                                android:maxLines="1"
-                                android:inputType="textPassword"/>
+                                android:inputType="textPassword"
+                                android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
-
 
 
                         <Button
                             android:id="@+id/btnLogin"
-                            android:layout_height="wrap_content"
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:textColor="@color/white"
                             android:layout_marginTop="16dp"
-                            android:text="@string/login" />
+                            android:text="@string/login"
+                            android:textColor="@color/white"
+                            app:cornerRadius="70dp" />
 
                         <TextView
                             android:id="@+id/txtViewRegister"
                             style="@style/sama"
-                            android:textAlignment="center"
-                            android:textStyle="bold"
-                            android:textColor="@color/primaryTextColor"
-                            android:text="@string/login_signup_hint"
-                            android:onClick="viewRegisterClicked"
                             android:layout_marginTop="@dimen/loginViewsMargin"
-                            android:gravity="center_horizontal" />
+                            android:gravity="center_horizontal"
+                            android:onClick="viewRegisterClicked"
+                            android:text="@string/login_signup_hint"
+                            android:textAlignment="center"
+                            android:textColor="@color/primaryTextColor"
+                            android:textStyle="bold" />
 
 
                     </LinearLayout>
-                </androidx.cardview.widget.CardView> />
+                </androidx.cardview.widget.CardView>
+                />
 
             </LinearLayout>
 
