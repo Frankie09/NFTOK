@@ -9,8 +9,7 @@ import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,9 +22,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.*;
+
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -38,9 +35,7 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
 
-import java.io.InputStream;
 
 
 public class Sell extends AppCompatActivity {
@@ -52,13 +47,14 @@ public class Sell extends AppCompatActivity {
     private Button mButtonUpload;
     private Uri mImageUri;
     private StorageTask mUploadTask;
-    private String Username, Email, Password, Money, PhoneNumber;
+    private String Username;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
+        this.getSupportActionBar().hide();
 
 
         mButtonUpload = findViewById(R.id.button_upload);

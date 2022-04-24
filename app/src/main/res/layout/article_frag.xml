@@ -14,6 +14,8 @@
         android:layout_width="400dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="36dp"
         android:layout_weight="1"
         android:text="TextView" />
 
@@ -23,7 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/penjual"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="TextView"
+
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/dibelidari"
@@ -31,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/article2"
         android:layout_weight="1"
+        android:textSize="20dp" />
         android:text="TextView" />
 
     <TextView
@@ -39,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView"
         android:layout_weight="1"
+        android:textSize="20dp" />
         android:text="TextView" />
 
     <TextView
@@ -47,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/pemilik"
         android:layout_weight="1"
+        android:textSize="20dp" />
         android:text="TextView" />
 
     <TextView
@@ -55,11 +62,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/hargaisi"
         android:layout_weight="1"
+        android:textSize="20dp" />
         android:text="TextView" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_below="@id/article"
         android:layout_alignParentLeft="true"
@@ -73,7 +81,7 @@
         android:layout_below="@id/article2"
         android:layout_gravity="bottom"
         android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/btn_bg"
         android:text="@string/buy"
         android:textColor="@color/white" />

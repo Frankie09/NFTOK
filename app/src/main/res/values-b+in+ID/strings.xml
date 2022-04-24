@@ -37,32 +37,14 @@
     <string name="username">Nama Pengguna</string>
     <string name="phone">Nomor Telepon</string>
 
-    <string-array name="berita">
-        <item>Example 1</item>
-        <item>Example 2</item>
-        <item>Example 3</item>
-    </string-array>
-    <string-array name="isi">
-        <item> Example Description 1 </item>
-        <item> Example Description 2</item>
-        <item> Example Description 3</item>
-    </string-array>
-    <string-array name="gambar">
-        <item>a1</item>
-        <item>a2</item>
-        <item>a3</item>
-    </string-array>
 
-    <string-array name="penjual">
-        <item>Nodas</item>
-        <item>Frankie</item>
-        <item>Ajeng</item>
-    </string-array>
+    <string name="cannotbuy">Cannot buy your own Image</string>
 
-    <string-array name="harga">
-        <item>10000</item>
-        <item>20000</item>
-        <item>30000</item>
-    </string-array>
+    <string name="Deskripsi">Description</string>
+    <string name="harga">Price</string>
+    <string name="creator">Creator</string>
+    <string name="owner">Owner</string>
+    <string name="buyfrom">Buy from</string>
+
 
 </resources>

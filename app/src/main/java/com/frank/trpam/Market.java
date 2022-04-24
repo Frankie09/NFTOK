@@ -1,6 +1,6 @@
 package com.frank.trpam;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
@@ -14,12 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
+
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -50,6 +47,7 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
         mFirebaseDatabase = mFirebaseInstance.getReference("Item");
         userdb = mFirebaseInstance.getReference("Profile");
         log = mFirebaseInstance.getReference("Log");
+        this.getSupportActionBar().hide();
 
 
 
@@ -98,12 +96,12 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
 
 
 
-        article.setText("Deskripsi : \n"+Ipsum.listData.get(index).getDeskripsi());
+        article.setText(getText(R.string.Deskripsi)+" :\n"+Ipsum.listData.get(index).getDeskripsi());
         judul_berita.setText(Ipsum.listData.get(index).getJudul());
-        penjual2.setText("Penjual : \n"+Ipsum.listData.get(index).getPenjual());
-        harga2.setText("Harga \n Rp."+Ipsum.listData.get(index).getHarga());
-        dibelidari.setText("Dibeli dari \n"+ Ipsum.listData.get(index).getDari());
-        pemilik.setText("Pemilik \n"+Ipsum.listData.get(index).getPemilik());
+        penjual2.setText(getText(R.string.owner)+" :\n"+Ipsum.listData.get(index).getPenjual());
+        harga2.setText(getText(R.string.harga)+" :\n"+Ipsum.listData.get(index).getHarga());
+        dibelidari.setText(getText(R.string.buyfrom)+" :\n"+ Ipsum.listData.get(index).getDari());
+        pemilik.setText(getText(R.string.creator)+" :\n"+Ipsum.listData.get(index).getPemilik());
 
        // image.setImageResource(getImageId(this,Ipsum.listData.get(index).getFoto()));
         Picasso.with(this).load(Ipsum.listData.get(index).getFoto()).into(image);
@@ -120,7 +118,7 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
                 }else {
 
                     if (Username.equals(Ipsum.listData.get(index).getPenjual())){
-                        Toast.makeText(Market.this, "Cannot buy your own Image", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Market.this,getText(R.string.cannotbuy) , Toast.LENGTH_SHORT).show();
                     } else {
                         double c = a - b;
                         userdb.child(Username).child("money").setValue(c);
