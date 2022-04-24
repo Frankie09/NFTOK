@@ -47,7 +47,7 @@
                     style="@style/nama"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:text="NFT MARKETPLACE" />
+                    android:text="@string/nftok" />
 
                 <androidx.cardview.widget.CardView
                     style="@style/login"

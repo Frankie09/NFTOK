@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseDatabase = mFirebaseInstance.getReference("Profile");
 
         // store app title to 'app_title' node
-        mFirebaseInstance.getReference("app_title").setValue("User Database");
+      
 
 
         Masuk.setOnClickListener(new View.OnClickListener() {
