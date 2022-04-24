@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg1"
     android:padding="16dp"
     tools:context=".Sell">
 
@@ -62,8 +63,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Sell" />
-
+        android:background="@drawable/btn_bg"
+        android:text="Sell"
+        android:textColor="@color/white" />
 
 
 </RelativeLayout>
