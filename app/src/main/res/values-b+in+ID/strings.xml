@@ -17,9 +17,9 @@
     <string name="error3">Kata sandi harus terdiri dari 8 karakter!</string>
 
     <string name="buy">Beli</string>
-    <string name="buysucces">Buy Succes!</string>
-    <string name="buyfail">Not enugh money!</string>
-    <string name="deposit">Menyetorkan Uang</string>
+    <string name="buysucces">Berhasil Membeli!</string>
+    <string name="buyfail">Tidak Cukup Uang!</string>
+    <string name="deposit">Isi Uang</string>
     <string name="money">Uang</string>
     <string name="collection">Koleksi</string>
     <string name="sell">Jual</string>
