@@ -22,7 +22,7 @@ public class Uang extends AppCompatActivity {
     private EditText isiuang;
     private TextView jumlauang;
     private Button tombolisi,btnHome;
-    private String Username, Email, Password, Money, PhoneNumber;
+    private String Username,  Money;
     private  double amount;
 
 
@@ -35,9 +35,7 @@ public class Uang extends AppCompatActivity {
         mFirebaseDatabase = mFirebaseInstance.getReference("Profile");
         Intent intent = getIntent();
         Username = intent.getStringExtra("username");
-        Email = intent.getStringExtra("email");
-        PhoneNumber = intent.getStringExtra("phone");
-        Password = intent.getStringExtra("password");
+
         Money = intent.getStringExtra("money");
 
         double angkakoma = Double.parseDouble(Money);
