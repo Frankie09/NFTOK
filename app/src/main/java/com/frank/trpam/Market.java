@@ -78,7 +78,6 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
         String status2 =  "koleksi";
         playButton = (Button) findViewById(R.id.tombolbeli);
 
-
         FragmentManager manager = this.getSupportFragmentManager();
 
         manager.beginTransaction()
@@ -92,9 +91,6 @@ public class Market extends AppCompatActivity implements ListFrag.JudulListener 
             playButton.setVisibility(View.GONE);
 
         }
-
-
-
 
         article.setText(getText(R.string.Deskripsi)+" :\n"+Ipsum.listData.get(index).getDeskripsi());
         judul_berita.setText(Ipsum.listData.get(index).getJudul());
