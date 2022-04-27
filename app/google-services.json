@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "478097685979",
-    "firebase_url": "https://pemrogramanam-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "pemrogramanam",
-    "storage_bucket": "pemrogramanam.appspot.com"
+    "project_number": "1003619008308",
+    "firebase_url": "https://trpam-35771-default-rtdb.firebaseio.com",
+    "project_id": "trpam-35771",
+    "storage_bucket": "trpam-35771.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:478097685979:android:feae14319155f9ad723bfe",
+        "mobilesdk_app_id": "1:1003619008308:android:9ef9aed5aaadba22a06f61",
         "android_client_info": {
           "package_name": "com.frank.trpam"
         }
       },
       "oauth_client": [
         {
-          "client_id": "478097685979-ald07kkq3suhm53flnj4br3tt0320g78.apps.googleusercontent.com",
+          "client_id": "1003619008308-32iovf016ukt48eett0vtojtoivder93.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA2Ovn16e4-yUEwqkMCc20UgjxfbjV0UiY"
+          "current_key": "AIzaSyCt1CICxQltY0LmzGolKJHVz8k_nN-dmxA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "478097685979-ald07kkq3suhm53flnj4br3tt0320g78.apps.googleusercontent.com",
+              "client_id": "1003619008308-32iovf016ukt48eett0vtojtoivder93.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

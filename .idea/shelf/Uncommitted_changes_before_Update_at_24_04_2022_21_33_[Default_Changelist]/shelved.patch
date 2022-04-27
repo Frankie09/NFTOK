@@ -1,0 +1,101 @@
+Index: app/src/main/res/values-b+in+ID/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">TRPAM</string>\r\n    <string name=\"register\">DAFTAR</string>\r\n    <string name=\"login\">MASUK</string>\r\n    <string name=\"login_email_hint\">Email</string>\r\n    <string name=\"login_password_hint\">Kata Sandi</string>\r\n    <string name=\"confirm_password_hint\">Konfirmasi Kata Sandi</string>\r\n    <string name=\"signup_login_hint\">Sudah memiliki akun? Masuk</string>\r\n    <string name=\"login_signup_hint\">\"Tidak memiliki akun? Mendaftar\"</string>\r\n    <string name=\"error1\">Kata Sandi Salah!</string>\r\n    <string name=\"error7\">Pengguna tidak terdaftar!</string>\r\n    <string name=\"error4\">Bidang ini tidak boleh kosong!</string>\r\n    <string name=\"error5\">Silakan Masukkan Email yang Benar!</string>\r\n    <string name=\"error6\">Berhasil Mendaftar!</string>\r\n\r\n    <string name=\"error2\">\"Konfirmasi kata sandi tidak cocok dengan kata sandi!\"</string>\r\n    <string name=\"error3\">Kata sandi harus terdiri dari 8 karakter!</string>\r\n\r\n    <string name=\"buy\">Beli</string>\r\n    <string name=\"buysucces\">Buy Succes!</string>\r\n    <string name=\"buyfail\">Not enugh money!</string>\r\n    <string name=\"deposit\">Menyetorkan Uang</string>\r\n    <string name=\"money\">Uang</string>\r\n    <string name=\"collection\">Koleksi</string>\r\n    <string name=\"sell\">Jual</string>\r\n    <string name=\"about\">Tentang</string>\r\n    <string name=\"home\">Awal</string>\r\n    <string name=\"nominal\">Masukkan Nominal</string>\r\n    <string name=\"keterangan\">Selamat datang di NFTOK. Ini adalah aplikasi yang dapat digunakan untuk jual beli NFT. Dalam aplikasi ini Anda dapat mengunggah dan menjual karya NFT Anda sendiri, atau Anda dapat membeli karya orang lain dan NFT tersebut menjadi milik Anda</string>\r\n\r\n    <string name=\"akun\">Akun</string>\r\n    <string name=\"update\">Memperbarui</string>\r\n    <string name=\"logout\">Keluar</string>\r\n    <string name=\"email\">E-Mail</string>\r\n    <string name=\"alamat\">Alamat</string>\r\n    <string name=\"fullname\">Nama Lengkap</string>\r\n    <string name=\"username\">Nama Pengguna</string>\r\n    <string name=\"phone\">Nomor Telepon</string>\r\n\r\n    <string-array name=\"berita\">\r\n        <item>Example 1</item>\r\n        <item>Example 2</item>\r\n        <item>Example 3</item>\r\n    </string-array>\r\n    <string-array name=\"isi\">\r\n        <item> Example Description 1 </item>\r\n        <item> Example Description 2</item>\r\n        <item> Example Description 3</item>\r\n    </string-array>\r\n    <string-array name=\"gambar\">\r\n        <item>a1</item>\r\n        <item>a2</item>\r\n        <item>a3</item>\r\n    </string-array>\r\n\r\n    <string-array name=\"penjual\">\r\n        <item>Nodas</item>\r\n        <item>Frankie</item>\r\n        <item>Ajeng</item>\r\n    </string-array>\r\n\r\n    <string-array name=\"harga\">\r\n        <item>10000</item>\r\n        <item>20000</item>\r\n        <item>30000</item>\r\n    </string-array>\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-b+in+ID/strings.xml b/app/src/main/res/values-b+in+ID/strings.xml
+--- a/app/src/main/res/values-b+in+ID/strings.xml	(revision 3b81264e8e5b9a9dbaaf4d2e1e137230547ac4ed)
++++ b/app/src/main/res/values-b+in+ID/strings.xml	(date 1650810021692)
+@@ -17,9 +17,9 @@
+     <string name="error3">Kata sandi harus terdiri dari 8 karakter!</string>
+ 
+     <string name="buy">Beli</string>
+-    <string name="buysucces">Buy Succes!</string>
+-    <string name="buyfail">Not enugh money!</string>
+-    <string name="deposit">Menyetorkan Uang</string>
++    <string name="buysucces">Berhasil Membeli!</string>
++    <string name="buyfail">Tidak Cukup Uang!</string>
++    <string name="deposit">Isi Uang</string>
+     <string name="money">Uang</string>
+     <string name="collection">Koleksi</string>
+     <string name="sell">Jual</string>
+Index: app/src/main/java/com/frank/trpam/Account.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.frank.trpam;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.util.Patterns;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\n\r\nimport com.google.firebase.database.DataSnapshot;\r\nimport com.google.firebase.database.DatabaseError;\r\nimport com.google.firebase.database.DatabaseReference;\r\nimport com.google.firebase.database.FirebaseDatabase;\r\nimport com.google.firebase.database.Query;\r\nimport com.google.firebase.database.ValueEventListener;\r\n\r\npublic class Account extends AppCompatActivity {\r\n    DatabaseReference mFirebaseDatabase;\r\n    private Button btnChange;\r\n    private String Username, Email, Password, Money, PhoneNumber;\r\n    private EditText nomor,email;\r\n    private TextView user;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_account);\r\n        this.getSupportActionBar().hide();\r\n        FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();\r\n        mFirebaseDatabase = mFirebaseInstance.getReference(\"Profile\");\r\n        Intent intent = getIntent();\r\n        Username = intent.getStringExtra(\"username\");\r\n        Email = intent.getStringExtra(\"email\");\r\n        PhoneNumber = intent.getStringExtra(\"phone\");\r\n        Password = intent.getStringExtra(\"password\");\r\n        Money = intent.getStringExtra(\"money\");\r\n        btnChange = findViewById(R.id.btnChange);\r\n\r\n        user = findViewById(R.id.username1);\r\n        nomor = findViewById(R.id.editnomor);\r\n        email = findViewById(R.id.editemail);\r\n        user.setText(\"Username : \"+ Username);\r\n        nomor.setText(PhoneNumber);\r\n        email.setText(Email);\r\n\r\n        btnChange.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                if(Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches() &&  !email.getText().toString().isEmpty() && !nomor.getText().toString().isEmpty() ){\r\n\r\n                    mFirebaseDatabase.child(Username).child(\"phone\").setValue(nomor.getText().toString());\r\n                    mFirebaseDatabase.child(Username).child(\"email\").setValue(email.getText().toString());\r\n                }  else if(email.getText().toString().isEmpty()){\r\n                    email.setError(getText(R.string.error4));\r\n                }   else if(nomor.getText().toString().isEmpty()){\r\n                    nomor.setError(getText(R.string.error4));\r\n                }\r\n            }\r\n        });\r\n\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/frank/trpam/Account.java b/app/src/main/java/com/frank/trpam/Account.java
+--- a/app/src/main/java/com/frank/trpam/Account.java	(revision 3b81264e8e5b9a9dbaaf4d2e1e137230547ac4ed)
++++ b/app/src/main/java/com/frank/trpam/Account.java	(date 1650726764157)
+@@ -10,6 +10,7 @@
+ import android.widget.Button;
+ import android.widget.EditText;
+ import android.widget.TextView;
++import android.widget.Toast;
+ 
+ import com.google.firebase.database.DataSnapshot;
+ import com.google.firebase.database.DatabaseError;
+@@ -22,7 +23,7 @@
+     DatabaseReference mFirebaseDatabase;
+     private Button btnChange;
+     private String Username, Email, Password, Money, PhoneNumber;
+-    private EditText nomor,email;
++    private EditText nomor,email,password;
+     private TextView user;
+ 
+     @Override
+@@ -43,9 +44,11 @@
+         user = findViewById(R.id.username1);
+         nomor = findViewById(R.id.editnomor);
+         email = findViewById(R.id.editemail);
++        password = findViewById(R.id.editpassword);
+         user.setText("Username : "+ Username);
+         nomor.setText(PhoneNumber);
+         email.setText(Email);
++        password.setText(Password);
+ 
+         btnChange.setOnClickListener(new View.OnClickListener() {
+             @Override
+@@ -54,6 +57,8 @@
+ 
+                     mFirebaseDatabase.child(Username).child("phone").setValue(nomor.getText().toString());
+                     mFirebaseDatabase.child(Username).child("email").setValue(email.getText().toString());
++                    mFirebaseDatabase.child(Username).child("password").setValue(password.getText().toString());
++                    Toast.makeText(Account.this, "Succes Change", Toast.LENGTH_SHORT).show();
+                 }  else if(email.getText().toString().isEmpty()){
+                     email.setError(getText(R.string.error4));
+                 }   else if(nomor.getText().toString().isEmpty()){
+Index: app/src/main/res/layout/activity_account.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Home\"\r\n    android:orientation=\"vertical\">\r\n\r\n    <LinearLayout\r\n        style=\"@style/form\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_gravity=\"top\"\r\n        >\r\n\r\n\r\n        <TextView\r\n            style=\"@style/texthijau\"\r\n            android:layout_marginTop=\"8dp\"\r\n            android:layout_marginBottom=\"16dp\"\r\n            android:text=\"@string/akun\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginLeft=\"8dp\"\r\n            android:text=\"Username : \"\r\n            android:textSize=\"20dp\"\r\n            android:id=\"@+id/username1\"/>\r\n\r\n\r\n\r\n\r\n\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            style=\"@style/sama\"\r\n            android:layout_marginTop=\"@dimen/signup_text_margin_top\">\r\n\r\n            <EditText\r\n                android:id=\"@+id/editnomor\"\r\n                style=\"@style/input\"\r\n                android:hint=\"@string/phone\"\r\n                android:inputType=\"number\"\r\n                android:maxLines=\"1\" />\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            style=\"@style/sama\"\r\n            android:layout_marginTop=\"@dimen/signup_text_margin_top\">\r\n\r\n            <EditText\r\n                android:id=\"@+id/editemail\"\r\n                style=\"@style/input\"\r\n                android:hint=\"@string/login_email_hint\"\r\n                android:inputType=\"textEmailAddress\"\r\n                android:maxLines=\"1\" />\r\n\r\n\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n        <Button\r\n            android:id=\"@+id/btnChange\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"bottom\"\r\n            android:layout_marginTop=\"16dp\"\r\n            android:text=\"@string/update\"\r\n            android:textColor=\"@color/white\" />\r\n\r\n    </LinearLayout>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_account.xml b/app/src/main/res/layout/activity_account.xml
+--- a/app/src/main/res/layout/activity_account.xml	(revision 3b81264e8e5b9a9dbaaf4d2e1e137230547ac4ed)
++++ b/app/src/main/res/layout/activity_account.xml	(date 1650726601059)
+@@ -57,6 +57,19 @@
+ 
+ 
+         </com.google.android.material.textfield.TextInputLayout>
++        <com.google.android.material.textfield.TextInputLayout
++            style="@style/sama"
++            android:layout_marginTop="@dimen/signup_text_margin_top">
++
++            <EditText
++                android:id="@+id/editpassword"
++                style="@style/input"
++                android:hint="@string/login_password_hint"
++                android:inputType="text"
++                android:maxLines="1" />
++
++
++        </com.google.android.material.textfield.TextInputLayout>
+ 
+         <Button
+             android:id="@+id/btnChange"
